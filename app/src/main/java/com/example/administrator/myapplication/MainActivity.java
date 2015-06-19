@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.example.administrator.myapplication.util.MyTextUtil;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -20,6 +22,12 @@ public class MainActivity extends Activity {
         JSONArray json = new JSONArray();
         Gson gson = new Gson();
         System.out.println("commit at home");
+
+        MyTextUtil myTextUtil = new MyTextUtil();
+        String text = myTextUtil.getValue();
+
+        TextView tv = (TextView) findViewById(R.id.myTextView);
+        tv.setText(text);
 
     }
 
